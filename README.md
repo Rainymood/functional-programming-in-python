@@ -1,5 +1,7 @@
 # Functional programming in python
 
+![](https://miro.medium.com/max/180/0*l0y9Olr-DI61Lqr5.png)
+
 ## Example 1
 
 Because everything in Python is an object, we can assign functions to variables

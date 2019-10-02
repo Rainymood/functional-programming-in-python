@@ -50,5 +50,18 @@ print(sorted(names, key=lambda last: last[-1])) # ['Zoe', 'Johnannes', 'Bert']
 
 [source](https://kite.com/blog/python/functional-programming/)
 
+## Example 4
 
+Simply put **map applies a function every item in a sequence.** Map itself
+returns a `map object`, hence the need for `list()`. If you ever find yourself
+trying to loop over a list and want to do *something* with every element of the
+list maybe you need a `map()`. 
 
+```python
+values = [1, 2, 3, 4, 5, 6]
+multiply_by_2 = lambda x: x * 2
+
+print(list(map(multiply_by_2, values))) # [2, 4, 6, 8, 10, 12]
+```
+
+[source](https://kite.com/blog/python/functional-programming/)

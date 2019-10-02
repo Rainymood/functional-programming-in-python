@@ -68,7 +68,7 @@ list(map(multiply_by_2, values)) # [2, 4, 6, 8, 10, 12]
 
 ## Example 5
 
-The function `reduce` does somewhat the opposite of `map`. Simply put, **reduce applies a function of two arguments iteratively, reducing the list to a single value.** An example makes it clear immediately what reduce does. Check out the following example in `examples/example5.py`.
+The function `reduce` does somewhat the opposite of `map`. Simply put, **reduce applies a function of two arguments iteratively, reducing the list to a single value.** An example makes it clear immediately what reduce does. Check out the following example in `examples/example5.py`. It should be noted that Guido van Rossum hates `reduce` as evident from [this blog (2005)](https://www.artima.com/weblogs/viewpost.jsp?thread=98196)
 
 ```python
 from functools import reduce
@@ -81,3 +81,23 @@ reduce(add, values) # (((((1+2)+3)+4)+5)+6) = 21
 ```
 
 [source](https://docs.python.org/3/library/functools.html#functools.reduce)
+
+## Example 6
+
+One of the most common uses for `map` can be found in `examples/example6.py` in combination with Pandas. First, we create a DataFrame with two column and then create a third one by multiplying each value by two. Note that in this case `df['col3'] = df['col2] * 2` would also suffice.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'col1':[1,2,3], 'col2':[10, 20, 30]})
+#    col1  col2
+# 0     1    10
+# 1     2    20
+# 2     3    30
+
+df['col3'] = list(map(lambda x: x * 2, df['col2']))
+#    col1  col2  col3
+# 0     1    10    20
+# 1     2    20    40
+# 2     3    30    60
+```

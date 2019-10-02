@@ -52,10 +52,10 @@ sorted(names, key=lambda last: last[-1]) # ['Zoe', 'Johnannes', 'Bert']
 
 ## Example 4
 
-Simply put **map applies a function every item in a sequence.** Map itself
+Simply put, **map applies a function every item in a sequence.** Map itself
 returns a `map object`, hence the need for `list()`. If you ever find yourself
 trying to loop over a list and want to do *something* with every element of the
-list maybe you need a `map()`. 
+list maybe you need a `map()`. Take a look at the following example found in `examples/example5.py`. 
 
 ```python
 values = [1, 2, 3, 4, 5, 6]
@@ -65,3 +65,19 @@ list(map(multiply_by_2, values)) # [2, 4, 6, 8, 10, 12]
 ```
 
 [source](https://kite.com/blog/python/functional-programming/)
+
+## Example 5
+
+The function `reduce` does somewhat the opposite of `map`. Simply put, **reduce applies a function of two arguments iteratively, reducing the list to a single value.** An example makes it clear immediately what reduce does. Check out the following example in `examples/example5.py`.
+
+```python
+from functools import reduce
+
+values = [1, 2, 3, 4, 5, 6]
+
+add = lambda x, y: x + y # values cumulate in x and get updated with y
+
+reduce(add, values) # (((((1+2)+3)+4)+5)+6) = 21 
+```
+
+[source](https://docs.python.org/3/library/functools.html#functools.reduce)

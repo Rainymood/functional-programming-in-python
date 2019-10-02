@@ -122,3 +122,36 @@ This is equivalent to
 ```
 
 [source](https://stackabuse.com/functional-programming-in-python/)
+
+# Example 8 
+
+In the following example, found in `examples/example8.py` we have a small programming challenge that can be found [here](https://medium.com/@jondot/functional-programming-with-python-for-people-without-time-1eebdbd9526c)
+
+```python
+people = [
+    {
+        'first_name': 'Bruce',
+        'last_name': 'Wayne'
+    },
+    {
+        'first_name': 'Joker',
+        'last_name': ''
+    }
+]
+
+res = ','.join(list(map(lambda d: d['first_name'], people)))
+
+print(res) # Bruce,Joker
+```
+
+The author of the blog post comes up with this solution
+
+```python
+joined_names = reduce(
+    lambda acc, name: acc + "," + name,
+    map(lambda person: person['first_name'], people))
+```
+
+which makes use of unnecessary functional programming, keep it simple. A simple `join()` does wonders here, there is no need for `reduce()`. 
+
+[source](https://medium.com/@jondot/functional-programming-with-python-for-people-without-time-1eebdbd9526c)

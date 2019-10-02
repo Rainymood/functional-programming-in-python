@@ -123,7 +123,7 @@ This is equivalent to
 
 [source](https://stackabuse.com/functional-programming-in-python/)
 
-# Example 8 
+## Example 8 
 
 In the following example, found in `examples/example8.py` we have a small programming challenge that can be found [here](https://medium.com/@jondot/functional-programming-with-python-for-people-without-time-1eebdbd9526c)
 
@@ -139,9 +139,9 @@ people = [
     }
 ]
 
-res = ','.join(list(map(lambda d: d['first_name'], people)))
+joined_names = ','.join(list(map(lambda d: d['first_name'], people)))
 
-print(res) # Bruce,Joker
+print(joined_names) # Bruce,Joker
 ```
 
 The author of the blog post comes up with this solution
@@ -150,8 +150,27 @@ The author of the blog post comes up with this solution
 joined_names = reduce(
     lambda acc, name: acc + "," + name,
     map(lambda person: person['first_name'], people))
+
+print(joined_names) # Bruce,Joker
 ```
 
 which makes use of unnecessary functional programming, keep it simple. A simple `join()` does wonders here, there is no need for `reduce()`. 
 
 [source](https://medium.com/@jondot/functional-programming-with-python-for-people-without-time-1eebdbd9526c)
+
+## Example 9
+
+**Currying is the technique of transforming a function with multiple arguments into a sequence of functions with just a single argument.** Named after the famous mathematician and logician [Haskell Curry](https://en.wikipedia.org/wiki/Haskell_Curry) after which the [Haskell language](https://www.haskell.org/) is also named. Imagine we have a function `f(x, y, z)`, "currying" this function would transform it into `f(x)(y)(z)`. 
+
+```python
+def add(x): 
+    def _inner(y): # has access to value of x
+        return x + y # last call returns a value
+    return _inner # returns function 
+
+add(10)(20) # returns 30
+```
+
+(Personally, I still don't really see the value of this in Python and will have to look more deeply into currying.)
+
+[source](https://unpythonic.com/01_05_currying/)

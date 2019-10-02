@@ -28,7 +28,7 @@ assign it to `addition`.
 ```python
 addition = lambda a, b: a + b
 
-print(addition(3, 4)) # returns 7
+addition(3, 4) # returns 7
 ```
 
 [source](https://kite.com/blog/python/functional-programming/)
@@ -44,8 +44,8 @@ the last character.
 
 ```python
 names = ['Bert', 'Johnannes', 'Zoe']
-print(sorted(names, key=len)) # ['Zoe', 'Bert', 'Johnannes']
-print(sorted(names, key=lambda last: last[-1])) # ['Zoe', 'Johnannes', 'Bert']
+sorted(names, key=len) # ['Zoe', 'Bert', 'Johnannes']
+sorted(names, key=lambda last: last[-1]) # ['Zoe', 'Johnannes', 'Bert']
 ```
 
 [source](https://kite.com/blog/python/functional-programming/)
@@ -61,7 +61,7 @@ list maybe you need a `map()`.
 values = [1, 2, 3, 4, 5, 6]
 multiply_by_2 = lambda x: x * 2
 
-print(list(map(multiply_by_2, values))) # [2, 4, 6, 8, 10, 12]
+list(map(multiply_by_2, values)) # [2, 4, 6, 8, 10, 12]
 ```
 
 [source](https://kite.com/blog/python/functional-programming/)

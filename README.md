@@ -44,6 +44,7 @@ the last character.
 
 ```python
 names = ['Bert', 'Johnannes', 'Zoe']
+
 sorted(names, key=len) # ['Zoe', 'Bert', 'Johnannes']
 sorted(names, key=lambda last: last[-1]) # ['Zoe', 'Johnannes', 'Bert']
 ```
@@ -74,7 +75,6 @@ The function `reduce` does somewhat the opposite of `map`. Simply put, **reduce 
 from functools import reduce
 
 values = [1, 2, 3, 4, 5, 6]
-
 add = lambda x, y: x + y # values cumulate in x and get updated with y
 
 reduce(add, values) # (((((1+2)+3)+4)+5)+6) = 21 
@@ -89,7 +89,7 @@ One of the most common uses for `map` can be found in `examples/example6.py` in 
 ```python
 import pandas as pd
 
-df = pd.DataFrame({'col1':[1,2,3], 'col2':[10, 20, 30]})
+df = pd.DataFrame({'col1': [1, 2, 3], 'col2': [10, 20, 30]})
 #    col1  col2
 # 0     1    10
 # 1     2    20
@@ -101,3 +101,22 @@ df['col3'] = list(map(lambda x: x * 2, df['col2']))
 # 1     2    20    40
 # 2     3    30    60
 ```
+
+## Example 7
+
+**Filter takes in a function and a list and returns the elements of the list where the function evaluates as true.** For example, consider `examples/example7.py`. Note that often `filter()` can be written more nicely and concisely as a list comprehension. 
+
+```python
+values = [1, 2, 3, 5, 4, 6]
+even = lambda x: x % 2 == 0
+
+list(filter(even, values)) # [2, 4, 6]
+```
+
+This is equivalent to
+
+```python
+[x for x in values if x % 2 == 0] # [2, 4, 6]
+```
+
+[source](https://stackabuse.com/functional-programming-in-python/)

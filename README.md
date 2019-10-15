@@ -1,5 +1,7 @@
 # Functional programming in python
 
+Hoi Dirk & Jeff. 
+
 ![](https://miro.medium.com/max/180/0*l0y9Olr-DI61Lqr5.png)
 
 ## Example 1

@@ -1,6 +1,6 @@
 # Functional programming in python
 
-Hoi Dirk & Jeff. 
+Hoi Dirk & Jeff. DIT IS DE MASTER BRANCH!!! 
 
 ![](https://miro.medium.com/max/180/0*l0y9Olr-DI61Lqr5.png)
 
